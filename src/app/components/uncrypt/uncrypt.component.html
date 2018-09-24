@@ -1,0 +1,39 @@
+<div class="container main-container">
+<div class="col-md-12 text-right">
+  <input type="text" value="" #newkey/>
+  <button (click)="setUpKey(newkey.value)" type="button" class="btn btn-outline-warning">
+    Set Up Public Key
+  </button>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-5">
+      <h3>Crypt</h3>
+      <br>
+      <textarea name="CryptText" [(ngModel)]="ctxt" cols="40" rows="5"></textarea>
+    </div>
+    <div class="col-sm-2">
+      <br>
+      <br>
+      <br>
+      <br>
+      <button type="button" name="button" (click)="changeMethod()">
+        <i class="fas fa-exchange-alt"></i>
+      </button>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <button type="button" name="button" class="btn btn-primary btn-lg btn-block" (click)="cryptUncrypt($event)" [disabled]="!key">
+        {{state}}
+      </button>
+
+    </div>
+    <div class="col-sm-5">
+      <h3>Uncrypt</h3>
+      <br>
+      <textarea name="UncryptText" [(ngModel)]="utxt" cols="40" rows="5"></textarea>
+    </div>
+  </div>
+</div>

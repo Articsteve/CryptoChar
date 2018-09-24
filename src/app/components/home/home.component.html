@@ -1,0 +1,5 @@
+
+<app-login *ngIf="!_chat.user.uId"></app-login>
+<div class="chat-window" *ngIf="_chat.user.uId">
+  <app-chat></app-chat>
+</div>
