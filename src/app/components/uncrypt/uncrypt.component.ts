@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as forge from "node-forge";
+import { KeyService } from '../../services/key.service';
 
 @Component({
   selector: 'app-uncrypt',
@@ -15,8 +16,9 @@ export class UncryptComponent implements OnInit {
   ctxt:string;
   utxt:string;
 
-  constructor() {
-
+  constructor( private _ks:KeyService) {
+    console.log(_ks.privateKey, "Service Private");
+    console.log(_ks.privateKey, "Service Public");
    }
    changeMethod(){
      if(this.state == "Crypt"){
@@ -28,7 +30,6 @@ export class UncryptComponent implements OnInit {
        }
      }
    }
-
 
 
    cryptUncrypt(){

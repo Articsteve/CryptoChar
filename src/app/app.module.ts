@@ -24,6 +24,7 @@ import { UncryptComponent } from './components/uncrypt/uncrypt.component';
 import { app_routing } from './app.routes';
 import { HomeComponent } from './components/home/home.component';
 import { KeyPipe } from './pipes/key.pipe';
+import { CryptComponent } from './components/crypt/crypt.component';
 
 
 
@@ -37,7 +38,8 @@ import { KeyPipe } from './pipes/key.pipe';
     GKeyComponent,
     UncryptComponent,
     HomeComponent,
-    KeyPipe
+    KeyPipe,
+    CryptComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),

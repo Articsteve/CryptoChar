@@ -20,8 +20,8 @@ export class GKeyComponent implements OnInit {
     this.privateKey = _ks.privateKey;
 
 
-    console.log(this.publicKey, "Public Key");
-    console.log(this.privateKey, "Private Key");
+    //console.log(this.publicKey, "Public Key");
+    //console.log(this.privateKey, "Private Key");
   }
 
   removeDeclarations( key:string ){
@@ -50,14 +50,19 @@ export class GKeyComponent implements OnInit {
     }
 
     createNewKeys(){
-          const pubprivkey = keypair(2048,65537); //sie in bits, encryption exponential
+          //const pubprivkey = keypair(2048,65537); //sie in bits, encryption exponential
+          //let rsa = forge.pki.rsa;
+          //let keypair = rsa.generateKeyPair({bits: 2048, e: 0x10001});
+          //console.log(keypair.privateKey, "Private");
+          //console.log(keypair.publicKey, "Public");
           //RSA 2 P numbers
-          this.pub2copy = pubprivkey.public;
+          /*this.pub2copy = pubprivkey.public;
           this.publicKey = this.removeDeclarations(pubprivkey.public);
           this.privateKey = this.removeDeclarations(pubprivkey.private);
           this._ks.privateKey = this.privateKey;
           this._ks.publicKey = this.publicKey;
           this._ks.actualPublicKey = forge.pki.publicKeyFromPem(pubprivkey.public);
+          */
     }
 
   ngOnInit() {

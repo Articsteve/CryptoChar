@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { Message } from '../interfaces/message.interface';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
+import {KeyService} from './key.service';
 
 @Injectable()
 export class ChatService {
@@ -12,9 +13,9 @@ export class ChatService {
   public chats:Message[] = [];
   public user: any = {};
 
-  constructor( private afs: AngularFirestore,  private afAuth: AngularFireAuth ) {
+  constructor( private afs: AngularFirestore,  private afAuth: AngularFireAuth, private _ks:KeyService ) {
       this.afAuth.authState.subscribe( userData =>{
-        console.log('User State', userData)
+        //console.log('User State', userData)
         if(!userData){
           return;
         }
@@ -44,9 +45,13 @@ export class ChatService {
   }
 
   addMessage( text:string ){
+
+    let encrMsg = this._ks.encrypt(text);
+
     let message:Message = {
       userId: this.user.uId,
       name: this.user.name,
+      MensajeEncriptado: encrMsg,
       Mensaje: text,
       date: new Date().getTime()
     }

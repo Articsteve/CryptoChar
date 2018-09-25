@@ -1,0 +1,33 @@
+<div class="container main-container">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-5">
+      <h3>Encrypt</h3>
+      <br>
+      <textarea name="CryptText" [(ngModel)]="ctxt" cols="40" rows="5"></textarea>
+    </div>
+    <div class="col-sm-2">
+      <br>
+      <br>
+      <br>
+      <br>
+      <button type="button" name="button" (click)="changeMethod()">
+        <i class="fas fa-exchange-alt"></i>
+      </button>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <button type="button" name="button" class="btn btn-primary btn-lg btn-block" (click)="cryptUncrypt($event)">
+        {{state}}
+      </button>
+
+    </div>
+    <div class="col-sm-5">
+      <h3>Decrypt</h3>
+      <br>
+      <textarea name="UncryptText" [(ngModel)]="utxt" cols="40" rows="5"></textarea>
+    </div>
+  </div>
+</div>
