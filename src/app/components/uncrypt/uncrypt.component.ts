@@ -17,8 +17,8 @@ export class UncryptComponent implements OnInit {
   utxt:string;
 
   constructor( private _ks:KeyService) {
-    console.log(_ks.privateKey, "Service Private");
-    console.log(_ks.privateKey, "Service Public");
+/*    console.log(_ks.privateKey, "Service Private");
+    console.log(_ks.privateKey, "Service Public");*/
    }
    changeMethod(){
      if(this.state == "Crypt"){

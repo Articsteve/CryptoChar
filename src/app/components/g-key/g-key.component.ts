@@ -16,9 +16,9 @@ export class GKeyComponent implements OnInit {
 
   constructor( private _ks:KeyService ) {
 
-    this.publicKey = _ks.publicKey;
+    /*this.publicKey = _ks.publicKey;
     this.privateKey = _ks.privateKey;
-
+*/
 
     //console.log(this.publicKey, "Public Key");
     //console.log(this.privateKey, "Private Key");
